@@ -37,6 +37,7 @@ def load_data(dirname="cifar-10-batches-py", one_hot=False):
 
     fpath = os.path.join(dirname, 'test_batch')
     X_test, Y_test = load_batch(fpath)
+    Y_test = np.array(Y_test)
 
     X_train = np.dstack((X_train[:, :1024], X_train[:, 1024:2048],
                          X_train[:, 2048:])) / 255.
